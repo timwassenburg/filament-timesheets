@@ -14,18 +14,6 @@ class Project extends Model
         'client_id',
     ];
 
-    public static function getProjectsWithClientName(): array
-    {
-        $projectsList = [];
-        $projects = self::with('client')->get();
-
-        foreach ($projects as $project) {
-            $projectsList[$project->id] = $project->name.' - '.$project->client->name;
-        }
-
-        return $projectsList;
-    }
-
     public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);

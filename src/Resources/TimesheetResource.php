@@ -98,7 +98,7 @@ class TimesheetResource extends Resource
                             );
                     }),
                 SelectFilter::make('project_id')
-                    ->options(Project::getProjectsWithClientName())
+                    ->options(Project::all()->pluck('name', 'id'))
                     ->label(__('filament-timesheet::timesheet.project')),
             ])
             ->actions([
