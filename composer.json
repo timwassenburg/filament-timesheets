@@ -1,0 +1,40 @@
+{
+    "name": "timwassenburg/filament-timesheets",
+    "description": "Filament Timesheets is a package for Filament that allows you to track time spent on projects and tasks.",
+    "keywords": [
+        "filament",
+        "php",
+        "laravel",
+        "timesheets"
+    ],
+    "require": {
+        "filament/filament": "^3.0-stable",
+        "pxlrbt/filament-excel": "^2.1",
+        "akaunting/laravel-money": "^5.1"
+    },
+    "homepage": "https://github.com/timwassenburg/filament-timesheets",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tim Wassenburg",
+            "email": "tim@codexion.nl",
+            "role": "Developer",
+            "homepage": "https://codexion.nl/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TimWassenburg\\FilamentTimesheets\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TimWassenburg\\FilamentTimesheets\\FilamentTimesheetsServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13"
+    }
+}
