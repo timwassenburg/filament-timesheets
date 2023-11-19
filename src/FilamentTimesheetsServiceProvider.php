@@ -13,6 +13,6 @@ class FilamentTimesheetsServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../lang' => $this->app->langPath('vendor/filament-timesheet'),
-        ]);
+        ], 'filament-timesheet');
     }
 }

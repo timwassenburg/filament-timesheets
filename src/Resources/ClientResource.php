@@ -73,9 +73,6 @@ class ClientResource extends Resource
                     ->label(__('filament-timesheet::client.name'))
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('revenue')
-                    ->badge()
-                    ->label(__('filament-timesheet::client.revenue')),
             ])
             ->filters([
                 //

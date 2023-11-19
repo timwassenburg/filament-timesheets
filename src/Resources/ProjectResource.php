@@ -53,9 +53,8 @@ class ProjectResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->label(__('filament-timesheet::project.name'))
                     ->sortable(),
-                Tables\Columns\TextColumn::make('hourly_rate')
-                    ->formatStateUsing(fn (Project $project): string => money($project->hourly_rate, config('countries.countries'), true))
-                    ->label(__('filament-timesheet::project.hourly_rate')),
+                Tables\Columns\TextColumn::make('client.name')
+                    ->label(__('filament-timesheet::project.client')),
             ])
             ->groups([
                 Group::make('client.name')

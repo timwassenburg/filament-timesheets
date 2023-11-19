@@ -8,16 +8,7 @@
 
 <hr>
 
-## Table of Contents
-
-  <ol>
-    <li><a href="#installation">Installation</a></li>
-    <li>
-      <a href="#usage">Usage</a>
-    </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
+This Laravel package integrates seamlessly with Filament, providing a straightforward way to manage and track time spent on various projects. Checkout the **demo** on [https://interimblue.com](https://interimblue.com).
 
 ## Installation
 
@@ -26,6 +17,18 @@ Install the package with composer.
 ```bash
 composer require timwassenburg/filament-timesheets
 ```
+
+## Customization
+
+### Translations
+
+You can customize the language of the package by publishing the language files.
+
+```bash
+php artisan vendor:publish --tag=filament-timesheet
+```
+
+After publishing the language files, you can edit the translations in `resources/lang/vendor/filament-timesheet`.
 
 ## Contributing
 
