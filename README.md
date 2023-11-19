@@ -18,6 +18,26 @@ Install the package with composer.
 composer require timwassenburg/filament-timesheets
 ```
 
+Then open `app/Providers/Filament/AdminPanelProvider.php` and add the plugin to the `plugin()` function.
+
+```php
+<?php
+
+namespace App\Providers\Filament;
+
+use Filament\Panel;
+use Filament\PanelProvider;
+use TimWassenburg\FilamentTimesheets\FilamentTimesheetsPlugin;
+
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            ->plugin(FilamentTimesheetsPlugin::make())
+            ...
+```
+
 ## Customization
 
 ### Translations
