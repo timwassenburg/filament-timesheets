@@ -37,11 +37,11 @@ class ListTimesheets extends ListRecords
     public function getTabs(): array
     {
         return [
-            'this_week' => Tab::make(__('filament-timesheet::timesheet.this_week'))->query(fn ($query) => $query->whereBetween('date', [Carbon::now()->startOfWeek()->toDateString(), Carbon::now()->endOfWeek()->toDateString()])),
-            'last_week' => Tab::make(__('filament-timesheet::timesheet.last_week'))->query(fn ($query) => $query->whereBetween('date', [Carbon::now()->subWeek()->startOfWeek()->toDateString(), Carbon::now()->subWeek()->endOfWeek()->toDateString()])),
-            'last_month' => Tab::make(__('filament-timesheet::timesheet.last_month'))->query(fn ($query) => $query->whereBetween('date', [Carbon::now()->subMonth()->startOfMonth()->toDateString(), Carbon::now()->subMonth()->endOfMonth()->toDateString()])),
-            'last_quarter' => Tab::make(__('filament-timesheet::timesheet.last_quarter'))->query(fn ($query) => $query->whereBetween('date', [Carbon::now()->subQuarter()->startOfQuarter()->toDateString(), Carbon::now()->subQuarter()->endOfQuarter()->toDateString()])),
-            'this_year' => Tab::make(__('filament-timesheet::timesheet.this_year'))->query(fn ($query) => $query->whereBetween('date', [Carbon::now()->startOfYear()->toDateString(), Carbon::now()->endOfYear()->toDateString()])),
+            'this_week' => Tab::make(__('filament-timesheet::timesheet.this_week'))->query(fn ($query) => $query->thisWeek()),
+            'last_week' => Tab::make(__('filament-timesheet::timesheet.last_week'))->query(fn ($query) => $query->lastWeek()),
+            'last_month' => Tab::make(__('filament-timesheet::timesheet.last_month'))->query(fn ($query) => $query->lastMonth()),
+            'last_quarter' => Tab::make(__('filament-timesheet::timesheet.last_quarter'))->query(fn ($query) => $query->lastQuarter()),
+            'this_year' => Tab::make(__('filament-timesheet::timesheet.this_year'))->query(fn ($query) => $query->thisYear()),
             'all' => Tab::make(__('filament-timesheet::timesheet.all')),
         ];
     }

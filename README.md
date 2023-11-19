@@ -21,8 +21,6 @@ composer require timwassenburg/filament-timesheets
 Then open `app/Providers/Filament/AdminPanelProvider.php` and add the plugin to the `plugin()` function.
 
 ```php
-<?php
-
 namespace App\Providers\Filament;
 
 use Filament\Panel;
