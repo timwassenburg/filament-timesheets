@@ -1,6 +1,6 @@
 # Laravel Timesheets for Filament
 
-<img src="img/banner.png" alt="Logo">
+<img src="https://raw.githubusercontent.com/timwassenburg/filament-timesheets/main/img/banner.png" alt="Logo">
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/timwassenburg/filament-timesheets.svg?style=flat-square)](https://packagist.org/packages/timwassenburg/filament-timesheets)
 [![Total Downloads](https://img.shields.io/packagist/dt/timwassenburg/filament-timesheets.svg?style=flat-square)](https://packagist.org/packages/timwassenburg/filament-timesheets)
