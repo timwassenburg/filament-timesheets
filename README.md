@@ -36,9 +36,7 @@ class AdminPanelProvider extends PanelProvider
             ...
 ```
 
-## Customization
-
-### Translations
+## Translations
 
 You can customize the language of the package by publishing the language files.
 
