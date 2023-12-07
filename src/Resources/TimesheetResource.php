@@ -77,10 +77,10 @@ class TimesheetResource extends Resource
                     ->label(__('filament-timesheet::timesheet.hours')),
                 Tables\Columns\TextColumn::make('project.name')
                     ->label(__('filament-timesheet::timesheet.project'))
-                    ->url(fn (Timesheet $record): string => route('filament.admin.resources.projects.edit', ['record' => $record->project])),
+                    ->url(fn (Timesheet $record): ?string => ProjectResource::getUrl('edit', ['record' => $record->project])),
                 Tables\Columns\TextColumn::make('project.client.name')
                     ->label(__('filament-timesheet::timesheet.client'))
-                    ->url(fn (Timesheet $record): string => route('filament.admin.resources.clients.edit', ['record' => $record->project->client])),
+                    ->url(fn (Timesheet $record): ?string => ClientResource::getUrl('edit', ['record' => $record->project->client])),
             ])
             ->defaultSort('id', 'desc')
             ->filters([
