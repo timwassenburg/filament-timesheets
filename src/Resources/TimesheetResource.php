@@ -31,6 +31,7 @@ class TimesheetResource extends Resource
             ->schema([
                 Select::make('project_id')
                     ->relationship('project', 'name')
+                    ->required()
                     ->options(Project::all()->pluck('name', 'id'))
                     ->label(__('filament-timesheet::timesheet.project'))
                     ->searchable()
@@ -49,9 +50,11 @@ class TimesheetResource extends Resource
                             ->options(Client::all()->pluck('name', 'id')),
                     ]),
                 Forms\Components\DatePicker::make('date')
+                    ->required()
                     ->label(__('filament-timesheet::timesheet.date'))
                     ->default(now()->format('Y-m-d'))->format('Y-m-d'),
                 Forms\Components\TextInput::make('hours')
+                    ->required()
                     ->label(__('filament-timesheet::timesheet.hours'))
                     ->placeholder(0),
                 Forms\Components\TextInput::make('description')

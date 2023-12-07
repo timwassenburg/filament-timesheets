@@ -32,6 +32,7 @@ class ProjectResource extends Resource
                     ->numeric()
                     ->required(),
                 Select::make('client_id')
+                    ->required()
                     ->relationship('client', 'name')
                     ->options(Client::all()->pluck('name', 'id'))
                     ->label(__('filament-timesheet::project.client'))
