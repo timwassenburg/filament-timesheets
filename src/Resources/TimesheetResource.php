@@ -32,7 +32,7 @@ class TimesheetResource extends Resource
                 Select::make('project_id')
                     ->relationship('project', 'name')
                     ->required()
-                    ->options(Project::all()->pluck('name', 'id'))
+                    ->options(fn () => Project::with('client')->get()->groupBy('client.name')->map(fn ($projects, $client) => $projects->pluck('name', 'id')->toArray())->toArray())
                     ->label(__('filament-timesheet::timesheet.project'))
                     ->searchable()
                     ->preload()
