@@ -113,6 +113,11 @@ class TimesheetResource extends Resource
             ]);
     }
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereRelation('project.client.user', 'id', '=', auth()->id());
+    }
+
     protected function getTableBulkActions(): array
     {
         return [

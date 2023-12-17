@@ -9,7 +9,8 @@
     ],
     "require": {
         "filament/filament": "^3.0-stable",
-        "pxlrbt/filament-excel": "^2.1"
+        "pxlrbt/filament-excel": "^2.1",
+        "staudenmeir/eloquent-has-many-deep": "^1.18"
     },
     "homepage": "https://github.com/timwassenburg/filament-timesheets",
     "license": "MIT",

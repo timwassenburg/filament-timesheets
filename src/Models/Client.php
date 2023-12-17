@@ -19,6 +19,7 @@ class Client extends Model
         'city',
         'zipcode',
         'country',
+        'user_id',
     ];
 
     public function projects(): HasMany

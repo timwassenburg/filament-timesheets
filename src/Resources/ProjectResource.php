@@ -9,6 +9,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Grouping\Group;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use TimWassenburg\FilamentTimesheets\Models\Client;
 use TimWassenburg\FilamentTimesheets\Models\Project;
 use TimWassenburg\FilamentTimesheets\Resources\ProjectResource\Pages;
@@ -71,6 +72,11 @@ class ProjectResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereRelation('client.user', 'id', '=', auth()->id());
     }
 
     public static function getRelations(): array
